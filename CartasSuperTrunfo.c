@@ -61,15 +61,25 @@ int main() {
     printf("Digite a Quantidade de Pontos Turisticos: \n");
     scanf("%d",&pontos_turisticos2);
 
-    //Exibição das Cartas
+ // Impressão das cartas
 
     printf("\nCarta 1\n");
-    printf(" Estado:%c\n Codigo:%c%s\n Nome da Cidade:%s\n População:%d\n Area:%.2f km²\n PIB:%f bilhões de reais\n Quantidade Pontos Turisticos:%d\n",
-    estado1,estado1,codigo1,nome_cidade1,populacao1,area1,pib1,pontos_turisticos1);
+    printf(" Estado: %c\n", estado1);
+    printf(" Codigo: %c%s\n", estado1,codigo1);
+    printf(" Nome da Cidade: %s\n", nome_cidade1);
+    printf(" População: %d\n", populacao1);
+    printf(" Area: %.2f km²\n", area1);
+    printf(" PIB: %.2f Bilhões de reais\n", pib1);
+    printf(" Quantidade Pontos Turisticos: %d\n", pontos_turisticos1);
 
     printf("\nCarta 2\n");
-    printf(" Estado:%c\n Codigo:%c%s\n Nome da Cidade:%s\n População:%d\n Area:%.2f km²\n PIB:%f bilhões de reais\n Quantidade Pontos Turisticos:%d\n",
-    estado2,estado2,codigo2,nome_cidade2,populacao2,area2,pib2,pontos_turisticos2);
+    printf(" Estado: %c\n", estado2);
+    printf(" Codigo: %c%s\n", estado2,codigo2);
+    printf(" Nome da Cidade: %s\n", nome_cidade2);
+    printf(" População: %d\n", populacao2);
+    printf(" Area: %.2f km²\n", area2);
+    printf(" PIB: %.2f Bilhões de reais\n", pib2);
+    printf(" Quantidade Pontos Turisticos: %d\n", pontos_turisticos2);
 
     return 0;
 
