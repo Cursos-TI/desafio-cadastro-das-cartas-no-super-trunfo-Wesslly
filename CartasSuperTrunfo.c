@@ -10,6 +10,9 @@ int main() {
     float area1, area2,densidade_populacional1,PIB_per_capita1;
     float pib1, pib2,densidade_populacional2,PIB_per_capita2;
     int pontos_turisticos1, pontos_turisticos2;
+    float superPoder1, superPoder2;
+    int resultadoPopulacao, resultadoArea, resultadoDensidade_populacional, resultadoPIB_per_capita, resultadoPIB,
+        resultadoPontosTuristicos, resultadoSuperPoder, resultadoDensidadePopulacional;
 
     //Primeira Carta
 
@@ -40,6 +43,8 @@ int main() {
 
     densidade_populacional1 = populacao1 / area1;
     PIB_per_capita1 = pib1 / populacao1;
+    superPoder1 = (float)populacao1 + area1 + pib1 + (float)pontos_turisticos1 + PIB_per_capita1 + (1 / densidade_populacional1);
+
 
     //Segunda Carta
 
@@ -70,7 +75,19 @@ int main() {
 
     densidade_populacional2 = populacao2 / area2;
     PIB_per_capita2 = pib2 / populacao2;
+    superPoder2 = (float)populacao1 + area1 + pib1 + (float)pontos_turisticos1 + PIB_per_capita1 + (1 / densidade_populacional1);
 
+
+    // Comparações de Atributos
+
+    resultadoPopulacao = populacao1 > populacao2;
+    resultadoArea = area1 > area2;
+    resultadoPIB = pib1 > pib2;
+    resultadoPontosTuristicos = pontos_turisticos1 > pontos_turisticos2;
+    resultadoPIB_per_capita = PIB_per_capita1 > PIB_per_capita2;
+    resultadoDensidade_populacional = densidade_populacional1 < densidade_populacional2;
+    resultadoSuperPoder = superPoder1 > superPoder2;
+    
     // Impressão das cartas
 
     printf("\nCarta 1\n");
@@ -84,7 +101,6 @@ int main() {
     printf(" Densidade Populacional: %2.f hab/km²\n", densidade_populacional1);
     printf(" PIB per Capita: %2.f reais\n", PIB_per_capita1);
     
-
     printf("\nCarta 2\n");
     printf(" Estado: %c\n", estado2);
     printf(" Codigo: %c%s\n", estado2,codigo2);
@@ -96,7 +112,17 @@ int main() {
     printf(" Densidade Populacional: %2.f hab/km²\n", densidade_populacional2);
     printf(" PIB per Capita: %2.f reais\n", PIB_per_capita2);
 
-    return 0;
+    //Impressão da Comparação das Cartas
 
+    printf("\nCOMPARAÇÃO DE CARTAS\n");
+    printf(" População: %s\n", resultadoPopulacao ? "Carta 1 Venceu(1)" : "Carta 2 Venceu(0)");
+    printf(" Area: %s\n", resultadoArea ? "Carta 1 Venceu(1)" : "Carta 2 Venceu(0)");
+    printf(" PIB: %s \n", resultadoPIB ? "Carta 1 Venceu(1)" : "Carta 2 Venceu(0)");
+    printf(" Quantidade Pontos Turisticos: %s\n", resultadoPontosTuristicos ? "Carta 1 Venceu(1)" : "Carta 2 Venceu(0)");
+    printf(" Densidade Populacional: %s\n", resultadoDensidade_populacional ? "Carta 1 Venceu(1)" : "Carta 2 Venceu(0)");
+    printf(" PIB per Capita: %s\n", resultadoPIB_per_capita ? "Carta 1 Venceu(1)" : "Carta 2 Venceu(0)");
+    printf(" Super Poder: %s\n", resultadoSuperPoder ? "Carta 1 Venceu(1)" : "Carta 2 Venceu(0)");
+
+    return 0;
 
 }
